@@ -1,0 +1,36 @@
+{% extends '../layouts/app.twig' %}
+
+{% block title %}Запчасти для атомобилей Исузу от производителя. Продажа оригинальных автозапчастей Isuzu{% endblock %}
+
+{% block body %}
+    {% if success == 1 %}
+        <div class="row">
+            <div class="col-md">
+                <div class="notice notice-success notice-lg">
+                    <strong><i class="far fa-envelope"></i></strong> Ваше сообщение отправлено!
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <!--
+    <div class="alert alert-danger">
+        <h4 class="alert-heading">Well done! </h4>
+        <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+        <hr>
+        <input class="form-control form-control-lg" type="text" placeholder="VIN">
+    </div>
+    -->
+
+    <div class="row">
+        {% for item in models %}
+            <div class="col-sm-6 __catalog_item">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.title }}</h5>
+                        <a href="{{ route('front_model_view', {'id': item.id}) }}" class="btn btn-danger">Смотреть каталог</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

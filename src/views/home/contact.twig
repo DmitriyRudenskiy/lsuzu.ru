@@ -1,0 +1,51 @@
+{% extends 'layout.twig' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+    <!-- Banner Start -->
+    <section class="banner clearfix">
+        <div class="container">
+            <h1 class="text-black white-text text-center">КОНТАКТ</h1>
+        </div>
+    </section>
+    <!-- Banner End -->
+
+    <!-- Contact Us Start -->
+    <section class="contact-us clearfix">
+        <div class="container">
+            <div class="row">
+                <!-- Col Start -->
+                <div class="col-sm-5 col-md-5">
+                    <h4 class="heading-primary mt-lg">Обратная <strong>Связь</strong></h4>
+                    <p class="lead">Мы не обладаем авторскими правами на изображения, представленные на сайте. Большинство из них собрано и размещено роботом.</p>
+                    <p>Если Вы являетесь владельцем изображений, находящихся в базе сайта tonpix.ru,  и имеете на них авторские права, Вы можете прислать запрос на удаление, размещение обратной ссылки, или установки копирайта.<br>Для этого пришлите урл страницы, где находится изображение, урл самого изображения, подтверждение Вашего авторства, а также Ваше решение по поводу размещения картинки (Удалить/поставить копирайт/поставить активную ссылку)</p>
+                    <h4 class="heading-primary"><strong>Спасибо</strong></h4>
+                </div>
+                <!-- Col End -->
+                <!-- Col Start -->
+                <div class="col-sm-7 col-md-7">
+                    <!-- Form Start -->
+                    <div class="form white-bg">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Ваше имя"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Ваш email"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Тема сообщения"/>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Сообщение"></textarea>
+                        </div>
+                        <div class="send-btn mt-30">
+                            <input type="submit" class="btn-sky waves-effect waves-light" value="SEND MESSAGE">
+                        </div>
+                    </div>
+                    <!-- Form End -->
+                </div>
+                <!-- Col End -->
+            </div>
+        </div>
+    </section>
+    <!-- Contact Us End -->
+{% endblock %}

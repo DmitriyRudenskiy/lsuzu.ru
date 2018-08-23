@@ -1,0 +1,73 @@
+{% extends '../layouts/app.twig' %}
+
+{% block title %}{{ spare_part.title }} FOR ISUZU {{ model.title }} {% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-sm">
+            <h1>ISUZU {{ model.title }}</h1>
+        </div>
+    </div>
+
+    {% if images.length > 0 %}
+        {% for item in images %}
+            <div class="row">
+                <div class="col-sm-7">
+                    <img data-src="http://isuzu.toptk.ru/images/schemes/{{ item.hash }}.png" alt="..." class="img-thumbnail lazy">
+                </div>
+                <div class="col-sm-5">
+                    {% if item.products.length > 0 %}
+                        <table class="table table-hover">
+                            <tbody>
+                            {% for value in item.products %}
+                            <tr>
+                                {% if value.name != "" %}
+                                    <td>{{ value.number }} </td>
+                                    <td>{{ value.code }}<br>{{ value.name }}</td>
+                                    <td><button type="button" class="btn btn-danger btn-block align-middle" data-toggle="modal" data-target="#send_request" data-code="ISUZU {{ model.title }} {{ value.code }} {{ value.name }}"><i class="fas fa-shopping-cart"></i></button></td>
+                                {% endif %}
+                            </tr>
+                            </tbody>
+                            {% endfor %}
+                        </table>
+                    {% else %}
+
+                        {% include '_form.twig' %}
+                    {% endif %}
+                </div>
+
+                <div class="col-sm-12"><hr></div>
+            </div>
+        {% endfor %}
+
+        <div class="modal bd-example-modal-sm" tabindex="-1" role="dialog" id="send_request">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        {% include '_form.twig' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                {% include '_form.twig' %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block script %}
+<script>
+    $('#send_request').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget)
+        var code = button.data('code').trim()
+        var modal = $(this)
+        modal.find('[name=comment]').val(code);
+    })
+</script>
+{% endblock %}

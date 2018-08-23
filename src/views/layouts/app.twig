@@ -1,0 +1,141 @@
+    <!doctype html>
+    <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+    <!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+    <!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+    <!--[if gt IE 8]><!-->
+    <html lang="ru"> <!--<![endif]--><head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ title }}| ISUZU</title>
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900&subset=latin,cyrillic" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700,700i&subset=latin,cyrillic" rel="stylesheet">
+        <link href="/css/animate.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/materialize.min.css">
+        <link rel="stylesheet" href="/css/bootstrap.css">
+        <link rel="stylesheet" href="/css/transition.css">
+        <link rel="stylesheet" href="/css/navbar.css">
+        <link rel="stylesheet" href="/css/banner.css">
+        <link rel="stylesheet" href="/css/service.css">
+        <link rel="stylesheet" href="/css/about-us.css">
+        <link rel="stylesheet" href="/css/screenshot.css">
+        <link rel="stylesheet" href="/css/our-clients.css">
+        <link rel="stylesheet" href="/css/portfolio.css">
+        <link rel="stylesheet" href="/css/priceing-table.css">
+        <link rel="stylesheet" href="/css/testinomial.css">
+        <link rel="stylesheet" href="/css/faq.css">
+        <link rel="stylesheet" href="/css/contact-us.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/slick.css">
+        <link rel="stylesheet" href="/css/slick-theme.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/responsive.css">
+        <link rel="stylesheet" href="/css/faq.css">
+        <link rel="stylesheet" href="/css/main.css">
+
+        <!--[if lt IE 9]>
+        <script src="/js/html5shiv.min.js"></script>
+        <script src="/js/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="/js/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+    <!-- Header Start -->
+    <header class="header clearfix">
+        <!-- Navigation Menu Starts -->
+        <nav class="navbar navbar-default box-shadow-10">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a  href="http://parts.isuzu.market/" target="_blank">
+                        <img class="img-responsive" src="/image/Isuzu_logo.png" alt="" width="300" />
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/">ГЛАВНАЯ</a></li>
+                        <li><a href="/about">О НАС  </a></li>
+                        <li><a href="/contact">КОНТАКТ  </a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <!-- Navigation Menu End -->
+    </header>
+    <!-- Header End -->
+
+    <div class="row">
+        <div class="col-lg-12 text-center" style="padding: 24px 0;">
+            <style>
+                #banner {
+                    width: 720px;
+                    height: 90px;
+                    background: url("/promo/banner_bg_2.png") no-repeat center;
+                    border: 1px solid black;
+                    margin: 0 auto;
+                    overflow: hidden;
+                    cursor: pointer;
+                }
+            </style>
+
+            <div id="banner" class="text-left">
+                <a href="http://parts.isuzu.market/" target="_blank" style="color: black !important;">
+                    <p style="padding-left: 250px; padding-top: 12px; font-size: 18px;  line-height: 1; font-weight: bold;">Каталог ISUZU онлайн</p>
+                    <p style="padding-left: 250px; font-size: 18px; line-height: 1">Подберите артикул самостоятельно<br>по VIN и № кузова (для правого руля)</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {% include "_big_form.twig" %}
+
+    {% block content %}{% endblock %}
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="get_phone" style="background: none; box-shadow: none;">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <p class="text-right"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+
+                    <div>
+                        <h3>Быстрая помощь дилера</h3>
+                        <p>Специалист быстро рассчитает несколько вариантов лизинга, предложит варианты снижения цены, подберёт комплектацию, проконсультирует по условиям доставки по всей стране</p>
+
+                        <form class="send_data">
+                            <div class="form-group text-left">
+                                <label>Ваше имя:</label>
+                                <input type="text" name="name" class="form-control" placeholder="Иван" required>
+                            </div>
+                            <div class="form-group text-left">
+                                <label class="text-left">Телефон:</label>
+                                <input type="text" name="phone" class="form-control" placeholder="+7 (123) 456 78-90" required>
+                            </div>
+                            <button type="submit" class="btn btn-warning">Позвоните мне</button>
+                        </form>
+
+                        <p style="padding-top: 24px; font-size: 80%">Ваши контактные данные в безопасности и не будут переданы третьим лицам</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/jquery-1.12.0.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/materialize.min.js"></script>
+    <script src="/js/wow.js"></script>
+    <script src="/js/jquery.sticky.js"></script>
+    <script src="/js/scrollIt.min.js"></script>
+    <script src="/js/slick.min.js"></script>
+    <script src="/js/main.js"></script>
+    </body>
+    </html>

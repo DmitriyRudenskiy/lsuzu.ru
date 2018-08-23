@@ -1,0 +1,42 @@
+{% extends '../layouts/app.twig' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+    <!-- Banner Start -->
+    <section class="banner clearfix">
+        <div class="container">
+            <h1 class="text-black white-text text-center">Архив изображений</h1>
+        </div>
+    </section>
+    <!-- Banner End -->
+
+    <!-- Contact Us Start -->
+    <section class="clearfix padding-tb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7 col-md-7 text-center"><img src="/image/could.png" alt=""></div>
+                <!-- Col Start -->
+                <div class="col-sm-5 col-md-5">
+                    <ul>
+                        {% for item in list %}
+                            <li><a href="/gallery/{{ item.alias }}.html" class="btn btn-link">{{ item.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+
+                    <div class="text-center">
+                        <ul class="pagination">
+                            {% for item in range(0, pages) %}
+                                {% if pagination.currentPage == item %}
+                                    <li class="active"><a href="#">{{ item }}</a></li>
+                                {% else %}
+                                    <li><a href="/page/{{ item }}">{{ item }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <!-- Col End -->
+            </div>
+        </div>
+    </section>
+    <!-- Contact Us End -->
+{% endblock %}

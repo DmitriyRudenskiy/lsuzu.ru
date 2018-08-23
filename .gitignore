@@ -1,0 +1,6 @@
+.env
+.idea
+node_modules
+_src
+public/.well-known
+public/gallery
