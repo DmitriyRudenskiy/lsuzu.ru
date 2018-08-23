@@ -9,7 +9,7 @@ QueryController.index = async (ctx, next) => {
     const offset = limit * (page - 1)
 
     const queries = await Query.findAndCountAll({ offset, limit })
-    const pages = Math.ceil(queries.count / limit)
+    const pages = Math.ceil(queries.count / limit) + 1
 
     console.log(queries);
 
