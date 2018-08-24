@@ -1,0 +1,40 @@
+{% set title = image.title %}
+{% extends '../layouts/app.twig' %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <!-- Banner Start -->
+    <section class="banner clearfix">
+        <div class="container">
+            <h1 class="text-black white-text text-center">{{ image.title | title }}</h1>
+        </div>
+    </section>
+    <!-- Banner End -->
+
+    <!-- About-US Start -->
+    <section class="about-us padding-tb-150" >
+        <!-- Container Start -->
+        <div class="container">
+            <div class="row padding-bottom-150">
+                <div class="col-sm-12 col-md-5 text-center">
+                    <p><img class="img-responsive" src="/gallery/full{{ image.hash | image_path }}" alt=""></p>
+                </div>
+                <div class="col-sm-12 col-md-7 padding-left-65">
+
+                        <h2>{{ image.title }}</h2>
+                        <p>{{ image.description }}</p>
+                    <p>
+                        <a href="{{ image.original }}" class="btn btn-link" target="_blank">источник</a>
+                        <a href="{{ iamge.source }}" class="btn btn-link" target="_blank">оригинал</a>
+                    </p>
+                    <p>
+                        <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#get_phone" style="height: auto; margin-right: 24px; padding: 17px 48px;font-size: 150%;">КУПИТЬ</button>
+                        <a href="http://parts.isuzu.market/" class="btn btn-success btn-lg" style="height: auto; padding: 17px 48px;font-size: 150%;" target="_blank">Каталог ISUZU онлайн</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Container End -->
+    </section>
+    <!-- About-US End -->
+{% endblock %}
