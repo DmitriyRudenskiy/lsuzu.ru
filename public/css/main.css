@@ -1,0 +1,11 @@
+.breadcrumb {
+    background: none;
+}
+
+.breadcrumb a {
+    color: #fff;
+}
+
+label {
+    font-size: 12px !important;
+}

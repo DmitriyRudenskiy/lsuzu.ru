@@ -1,19 +1,19 @@
 import Query from '../../models/query.model'
+import Image from '../../models/image.model'
 
 const ImageController = {}
 module.exports = ImageController
 
 ImageController.index = async (ctx, next) => {
-    let limit = 50
-    let page = req.params.page
-    let offset = limit * (page - 1)
-    let pages = Math.ceil(data.count / limit)
+    const alias = ctx.params.alias
 
-    const queries = await Query.findAll({ limit, offset })
+    const query = await Query.findOne({ where: { alias } })
 
-    ctx.body = await ctx.render('catalog/index', { queries, page, pages })
-}
+    if (query === null) {
+        throw new Error('Not find');
+    }
 
-ImageController.view = async (ctx, next) => {
-    ctx.body = await ctx.render('catalog/index', { queries, page, pages })
+    const images = await query.getImages();
+
+    ctx.body = await ctx.render('image/index', { query, images})
 }

@@ -39,6 +39,8 @@ app.context.render = co.wrap(
                         return idx + start
                     })
             },
+        },
+        filters: {
             image_path: function(hash) {
                 return (
                     '/' +
@@ -50,7 +52,7 @@ app.context.render = co.wrap(
                     '.jpg'
                 )
             },
-        },
+        }
     })
 )
 

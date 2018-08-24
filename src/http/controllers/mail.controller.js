@@ -5,7 +5,6 @@ import Mailer from '../../services/mailgun.service'
 const MailController = {}
 module.exports = MailController
 
-
 MailController.send = async (ctx, next) => {
     let sourceId = (ctx.request.body.source_id || -1) * 1
     let email = ctx.request.body.email || 'нет'

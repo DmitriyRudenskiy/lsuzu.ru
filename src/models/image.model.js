@@ -1,8 +1,6 @@
 import { Sequelize, sequelize } from './db'
 
-import Product from './product.model'
-
-const Image = sequelize.define(
+module.exports = sequelize.define(
     'Image',
     {
         id: {
@@ -11,40 +9,35 @@ const Image = sequelize.define(
             primaryKey: true,
             type: Sequelize.INTEGER,
         },
-        modelId: {
-            field: 'model_id',
+        vendorId: {
+            field: 'vendor_id',
             type: Sequelize.INTEGER,
         },
-        parent_number: {
+        visible: {
             type: Sequelize.INTEGER,
         },
-        number: {
+        download: {
             type: Sequelize.INTEGER,
         },
         hash: {
             type: Sequelize.STRING,
         },
-        createdAt: {
-            field: 'created_at',
-            allowNull: false,
-            type: Sequelize.DATE,
+        title: {
+            type: Sequelize.STRING,
         },
-        updatedAt: {
-            field: 'updated_at',
-            allowNull: false,
-            type: Sequelize.DATE,
+        description: {
+            type: Sequelize.STRING,
+        },
+        original: {
+            type: Sequelize.STRING,
+        },
+        source: {
+            type: Sequelize.STRING,
         },
     },
     {
-        tableName: 'images',
+        tableName: 'image',
+        underscored: true,
+        timestamps: false,
     }
 )
-
-module.exports = Image
-
-Image.hasMany(Product, { foreignKey: 'image_id', as: 'products' })
-/*
-    scope: {
-        commentable: 'post'
-    }});
-    */

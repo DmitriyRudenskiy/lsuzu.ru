@@ -1,0 +1,48 @@
+{% set title = query.name %}
+{% extends '../layouts/app.twig' %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <!-- Banner Start -->
+    <section class="banner clearfix">
+        <div class="container">
+            <h1 class="text-black white-text text-center">{{ query.name |title }}</h1>
+        </div>
+    </section>
+    <!-- Banner End -->
+
+    <!-- Portfolio Section Start -->
+    <section class="portfolio">
+        <!-- Container Section Start -->
+        <div class="container">
+            <!-- Portfolio-Filter Start -->
+            <div class="portfolio-gal isotope masonry_wrapper">
+                <div class="row">
+
+                    {% for item in images %}
+                    <div class="col-xs-12 col-sm-4 webdesign">
+                        <p><a class="img fancybox" href="/gallery/view/{{ item.id }}" target="_blank">
+                            <div class="image text-center">
+                                <img class="img-responsive" src="/gallery/thumbnail{{ item.hash | image_path }}" alt=""/>
+                            </div>
+                            <div class="image-detail text-center">
+                                <p>{{ item.title }}</p>
+                            </div>
+                        </a>
+                    </p>
+
+                    <p  class="text-center">
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#get_phone">КУПИТЬ</button>
+                    </p>
+
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+            <!-- Portfolio-Filter End -->
+        </div>
+        <!-- Container Section End -->
+    </section>
+    <!-- Portfolio Section End -->
+{% endblock %}

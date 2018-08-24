@@ -11,7 +11,10 @@ QueryController.index = async (ctx, next) => {
     const queries = await Query.findAndCountAll({ offset, limit })
     const pages = Math.ceil(queries.count / limit) + 1
 
-    console.log(queries);
-
-    ctx.body = await ctx.render('query/index', {"title": "Список", list: queries.rows, page, pages })
+    ctx.body = await ctx.render('query/index', {
+        title: 'Список',
+        list: queries.rows,
+        page,
+        pages,
+    })
 }
