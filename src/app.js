@@ -52,7 +52,7 @@ app.context.render = co.wrap(
                     '.jpg'
                 )
             },
-        }
+        },
     })
 )
 

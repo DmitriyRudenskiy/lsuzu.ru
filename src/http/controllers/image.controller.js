@@ -10,10 +10,10 @@ ImageController.index = async (ctx, next) => {
     const query = await Query.findOne({ where: { alias } })
 
     if (query === null) {
-        throw new Error('Not find');
+        throw new Error('Not find')
     }
 
-    const images = await query.getImages();
+    const images = await query.getImages({ download: 1 })
 
-    ctx.body = await ctx.render('image/index', { query, images})
+    ctx.body = await ctx.render('image/index', { query, images })
 }

@@ -38,17 +38,15 @@ Query.belongsToMany(Image, {
 })
 */
 
-
-
 Query.belongsToMany(Image, {
     through: {
         model: QueryImage,
-        unique: false
+        unique: false,
     },
     foreignKey: 'query_id',
     otherKey: 'image_id',
-    constraints: false
-});
+    constraints: false,
+})
 
 module.exports = Query
 
